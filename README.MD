@@ -22,9 +22,9 @@ The following commands are available using the Cedar CLI:
 
 | Command | Purpose | What it Evaluates | When to Use |
 |---------|---------|-------------------|-------------|
-| cedar validate | Validates policies against the schema | Checks syntax and schema compliance of policies | When writing or updating policies
-| cedar evaluate | Evaluates a single expression | Expressions only (e.g., principal.vendor == true) | When testing conditions or attributes logic without a policy file
-| cedar authorize | Runs a full authorization request against policies | Policies + request + entities + schema | When performing authorization decisions (ALLOW/DENY)
+| `cedar validate` | Validates policies against the schema | Checks syntax and schema compliance of policies | When writing or updating policies
+| `cedar evaluate` | Evaluates a single expression | Expressions only (e.g., principal.vendor == true) | When testing conditions or attributes logic without a policy file
+| `cedar authorize` | Runs a full authorization request against policies | Policies + request + entities + schema | When performing authorization decisions (ALLOW/DENY)
 
 ---
 
