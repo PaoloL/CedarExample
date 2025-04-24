@@ -55,15 +55,29 @@ cedar validate --schema app.schema --policies policy.cedar
 ```
 
 ### 2. **Authorize Request Against Policies**
-```bash
 
-cedar authorize --schema app.schema --policies policy.cedar --entities entities.json --request-json request-allow.json
+Expected Result: ALLOW
+```bash
+cedar authorize --policies policy.cedar --entities entities.json --request-json request-allow.json -v
 ```
 
-or
+Expected Result: DENY
 
 ```bash
-cedar authorize --schema app.schema --policies policy.cedar --entities entities.json --request-json request-deny.json
+cedar authorize --policies policy.cedar --entities entities.json --request-json request-deny.json -v
+```
+
+### 3. **Evaluate Expression**
+Evaluate expressions directly from the command line:
+
+```bash
+cedar evaluate "principal.vendor == true" --entities entities.json --request-json request-allow.json
+```
+
+More Complex Expression:
+
+```bash
+cedar evaluate "principal.vendor == true && resource.pricing > 8000" --entities entities.json --request-json request-allow.json
 ```
 
 ## Reference
