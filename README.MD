@@ -2,7 +2,7 @@
 
 This project demonstrates how to use **Cedar** to enforce **authorization policies** for an application that manages **bikes** and **users**. The policies define who can **view** or **update** bike information based on their role (e.g., vendor or customer).
 
-## 📂 Files Structure
+## Files Structure
 
 | File                | Purpose                                             |
 |---------------------|-----------------------------------------------------|
@@ -14,7 +14,13 @@ This project demonstrates how to use **Cedar** to enforce **authorization polici
 
 ---
 
-## 🧩 Entities
+## CLI available Commands
+Command | Purpose | What it Evaluates | When to Use
+cedar validate | Validates policies against the schema | Checks syntax and schema compliance of policies | When writing or updating policies
+cedar evaluate | Evaluates a single expression | Expressions only (e.g., principal.vendor == true) | When testing conditions or attributes logic without a policy file
+cedar authorize | Runs a full authorization request against policies | Policies + request + entities + schema | When performing authorization decisions (ALLOW/DENY)
+
+## Entities
 
 ### Entity Types:
 
@@ -24,7 +30,7 @@ This project demonstrates how to use **Cedar** to enforce **authorization polici
 
 ---
 
-## 📝 Policies
+## Policies
 
 1. **Allow all users** to **getBike** on any bike.
 2. **Allow only vendors** to **updateBike**.
@@ -32,7 +38,7 @@ This project demonstrates how to use **Cedar** to enforce **authorization polici
 
 ---
 
-## ⚙️ Commands
+## Commands
 
 ### 1. **Validate Policies Against Schema**
 
@@ -51,3 +57,7 @@ or
 ```bash
 cedar authorize --schema app.schema --policies policy.cedar --entities entities.json --request-json request-deny.json
 ```
+
+## Reference
+[Sample Data](https://github.com/cedar-policy/cedar/tree/main/cedar-policy-cli/sample-data)
+
