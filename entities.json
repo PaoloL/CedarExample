@@ -1,0 +1,38 @@
+[
+    {
+      "uid": { "type": "Recube::MyApp::User", "id": "bob" },
+      "attrs": {
+        "vendor": true,
+        "customer": false
+      },
+      "parents": []
+    },
+    {
+        "uid": { "type": "Recube::MyApp::User", "id": "alice" },
+        "attrs": {
+          "vendor": false,
+          "customer": true
+        },
+        "parents": []
+      },
+    {
+      "uid": { "type": "Recube::MyApp::Bike", "id": "bike-001" },
+      "attrs": {
+        "brand": "Yamaha",
+        "model": "FZ8",
+        "pricing": 8500
+      },
+      "parents": []
+    },
+    {
+        "uid": { "type": "Recube::MyApp::Action", "id": "getBike" },
+        "attrs": {},
+        "parents": []
+      },
+      {
+        "uid": { "type": "Recube::MyApp::Action", "id": "updateBike" },
+        "attrs": {},
+        "parents": []
+      }
+  ]
+  

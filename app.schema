@@ -1,0 +1,49 @@
+{
+  "Recube::MyApp": {
+    "entityTypes": {
+      "User": {
+        "shape": {
+          "type": "Record",
+          "attributes": {
+            "vendor": { 
+                "type": "Boolean" 
+            },
+            "customer": { 
+                "type": "Boolean" 
+            }
+          }
+        }
+      },
+      "Bike": {
+        "shape": {
+          "type": "Record",
+          "attributes": {
+            "brand": { 
+                "type": "String" 
+            },
+            "model": { 
+                "type": "String" 
+            },
+            "pricing": { 
+                "type": "Long" 
+            }
+          }
+        }
+      }
+    },
+    "actions": {
+      "getBike": {
+        "appliesTo": {
+          "principalTypes": ["User"],
+          "resourceTypes": ["Bike"]
+        }
+      },
+      "updateBike": {
+        "appliesTo": {
+          "principalTypes": ["User"],
+          "resourceTypes": ["Bike"]
+        }
+        }
+    }
+  }
+}
